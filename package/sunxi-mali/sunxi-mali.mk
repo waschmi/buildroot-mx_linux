@@ -5,7 +5,7 @@
 ################################################################################
 
 SUNXI_MALI_VERSION = c2491fe952
-SUNXI_MALI_SITE = http://github.com/linux-sunxi/sunxi-mali/tarball/$(SUNXI_MALI_VERSION)
+SUNXI_MALI_SITE = https://github.com/waschmi/sunxi-mali/tarball/$(SUNXI_MALI_VERSION)
 
 SUNXI_MALI_INSTALL_STAGING = YES
 SUNXI_MALI_DEPENDENCIES = sunxi-mali-prop
@@ -38,6 +38,9 @@ SUNXI_MALI_MAKE_OPTS += VERSION=r3p0
 endif
 ifeq ($(BR2_PACKAGE_SUNXI_MALI_R3P1),y)
 SUNXI_MALI_MAKE_OPTS += VERSION=r3p1
+endif
+ifeq ($(BR2_PACKAGE_SUNXI_MALI_R3P2),y)
+SUNXI_MALI_MAKE_OPTS += VERSION=r3p2
 endif
 
 define SUNXI_MALI_GIT_SUBMODULE_FIXUP
